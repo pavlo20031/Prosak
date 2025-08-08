@@ -1,0 +1,83 @@
+body {
+  background: radial-gradient(circle at center, #063, #021);
+  color: gold;
+  font-family: 'Arial Black', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* центрування по горизонталі */
+  justify-content: center; /* центрування по вертикалі */
+  min-height: 100vh;
+}
+
+.text {
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px gold, 0 0 15px orange;
+  animation: glowText 2s infinite alternate;
+  padding: 10px;
+  max-width: 90%;
+}
+
+.logo {
+  width: 150px;
+  max-width: 80%;
+  margin: 15px auto;
+  display: block;
+  animation: pulseLogo 2s infinite;
+}
+
+canvas {
+  background: #111;
+  border: 3px solid gold;
+  border-radius: 10px;
+  margin: 15px auto;
+  display: block;
+  width: 90%;  /* адаптивний розмір */
+  max-width: 300px; /* обмеження максимальної ширини */
+  height: auto;
+}
+
+.spin {
+  background: linear-gradient(90deg, gold, orange);
+  color: #111;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 10px gold, 0 0 20px orange;
+  transition: all 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.spin:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px gold, 0 0 30px orange;
+}
+
+.super-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: gold;
+  margin-top: 10px;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 5px gold, 0 0 15px orange; }
+  to { text-shadow: 0 0 15px gold, 0 0 30px red; }
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 15px gold); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 5px gold); }
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.4; }
+}
